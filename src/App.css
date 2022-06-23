@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+
+.btns {
+  margin: auto;
+  background-color: blue;
+}
+
+.body {
+  height: 100vh;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+}
+
+.form-check {
+  display: flex !important;
+  min-height: 1.5rem;
+  padding-left: 1.5em;
+  margin-bottom: 0.125rem;
+}
+
+.form-check-input {
+  margin-right: 12px;
+}
+
+/* margin-right: 12px; */

@@ -1,24 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Home from "./Home/home";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from "react";
 
 function App() {
+  const [style, setStyle] = useState({
+    backgroundColor: "white",
+    color: "black",
+  });
+  const [dark, setDark] = useState("Enable Dark Mode");
+
+  const darkMode = () => {
+    if (style.color === "black") {
+      setStyle({
+        backgroundColor: "#354259",
+        color: "white",
+      });
+      setDark("Enable Light Mode");
+    } else {
+      setStyle({
+        backgroundColor: "white",
+        color: "black",
+      });
+      setDark("Enable Dark Mode");
+    }
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div style={style} className='body'>
+        {/* <button className='btn btn-primary btns' onClick={darkMode}>
+          {dark}
+        </button> */}
+
+        <div className='form-check form-switch form'>
+          <input
+            className='form-check-input'
+            type='checkbox'
+            role='switch'
+            id='flexSwitchCheckDefault'
+            onClick={darkMode}
+          />{" "}
+          {dark}
+        </div>
+        <Home style={style} />
+      </div>
+    </>
   );
 }
 
